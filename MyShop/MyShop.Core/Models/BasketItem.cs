@@ -10,7 +10,7 @@ namespace MyShop.Core.Models
     {
         public string basketId { get; set; }
         public string productId { get; set; }
-        public string quantity { get; set; }
+        public int quantity { get; set; }
 
 
     }

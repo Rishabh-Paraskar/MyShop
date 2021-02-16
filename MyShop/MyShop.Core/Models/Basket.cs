@@ -8,10 +8,10 @@ namespace MyShop.Core.Models
 {
     public class Basket : BaseEntity
     {
-        public virtual ICollection<Basket> basketItems { get; set; }
+        public virtual ICollection<BasketItem> basketItems { get; set; }
 
         public Basket() {
-            this.basketItems = new List<Basket>();
+            this.basketItems = new List<BasketItem>();
 
         }
     }
