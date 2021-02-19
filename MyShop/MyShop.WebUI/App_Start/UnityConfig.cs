@@ -2,9 +2,11 @@ using MyShop.Core.Contracts;
 using MyShop.Core.Models;
 using MyShop.DataAccess.SQL;
 using MyShop.Services;
+using MyShop.WebUI.Controllers;
 using System;
 
 using Unity;
+using Unity.Injection;
 
 namespace MyShop.WebUI
 {
@@ -50,7 +52,12 @@ namespace MyShop.WebUI
             container.RegisterType<IRepository<ProductCategory>, SQLRepository<ProductCategory>>();
             container.RegisterType<IRepository<Basket>, SQLRepository<Basket>>();
             container.RegisterType<IRepository<BasketItem>, SQLRepository<BasketItem>>();
+            container.RegisterType<IRepository<Customer>, SQLRepository<Customer>>();
+            container.RegisterType<IRepository<Order>, SQLRepository<Order>>();
+
             container.RegisterType<IBasketService, BasketService>();
+            container.RegisterType<IOrderService, OrderService>();
+            //container.RegisterType<AccountController>(new InjectionConstructor());
         }
     }
 }
