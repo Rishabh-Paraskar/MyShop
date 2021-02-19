@@ -44,13 +44,12 @@ namespace MyShop.WebUI.Controllers
 
         [Authorize]
         public ActionResult checkOut() {
-            Customer cus = customers.collection().FirstOrDefault(i => i.email== User.Identity.Name);
+            Customer cus = customers.collection().FirstOrDefault(c=> c.email == User.Identity.Name);
             if (cus != null)
             {
 
                 Order order = new Order()
                 {
-
                     email = cus.email,
                     city = cus.city,
                     state = cus.state,
@@ -63,7 +62,7 @@ namespace MyShop.WebUI.Controllers
                 return View(order);
             }
             else {
-                return RedirectToAction("Error");
+                return RedirectToAction("Thankyou");
             }
             
         }
@@ -76,6 +75,7 @@ namespace MyShop.WebUI.Controllers
            var basketItems = basketService.getBasketItem(this.HttpContext);
             order.orderStatus = "Order created";
             order.email = User.Identity.Name;
+
             order.orderStatus = "Payment Processed";
             orderService.createOrder(order, basketItems);
             basketService.clearBasket(this.HttpContext);

@@ -161,6 +161,7 @@ namespace MyShop.WebUI.Controllers
                       street=model.street,
                       state=model.state,
                       zipCode=model.zipCode,
+                      email=model.Email,
                       userId=user.Id
                       
                     };
