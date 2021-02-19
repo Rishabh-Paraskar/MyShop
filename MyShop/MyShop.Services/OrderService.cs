@@ -33,5 +33,21 @@ namespace MyShop.Services
             orderContext.insert(baseOrder);
             orderContext.commit();
         }
-    }
+
+        public List<Order> getOrderList() {
+
+            return orderContext.collection().ToList();
+        }
+
+        public Order getOrder(string id) {
+
+            return orderContext.find(id);
+        }
+
+        public void updateOrder(Order updatedOrder) {
+
+            orderContext.update(updatedOrder);
+            orderContext.commit();
+        }
+    }     
 }
