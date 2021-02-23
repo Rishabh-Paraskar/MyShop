@@ -79,6 +79,18 @@ namespace MyShop.WebUI.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        [Required]
+        public string firstName { get; set; }
+        [Required]
+        public string lastName { get; set; }
+        
+        [Required]
+        public string street { get; set; }
+        [Required]
+        public string city { get; set; }
+        public string state { get; set; }
+        [Required]
+        public string zipCode { get; set; }
     }
 
     public class ResetPasswordViewModel
