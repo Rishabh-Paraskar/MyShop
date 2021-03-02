@@ -16,10 +16,10 @@ namespace MyShop.DataAccess.SQL
 
         public SQLRepository(DataContext context) {
             this.context = context;
-            this.dbSet = context.Set<T>();
-        }
+            this.dbSet = context.Set<T>();  }
 
-        public IQueryable<T> collection()
+
+    public IQueryable<T> collection()
         {
             return dbSet;
         }
@@ -45,7 +45,7 @@ namespace MyShop.DataAccess.SQL
 
         public void insert(T t)
         {
-            dbSet.Add(t); 
+            dbSet.Add(t);
         }
 
         public void update(T t)
@@ -55,3 +55,4 @@ namespace MyShop.DataAccess.SQL
         }
     }
 }
+
